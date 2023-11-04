@@ -326,7 +326,7 @@ public class MyList {
         while (before.next != p) {
             before = before.next;
         }
-        deleteAfter(before);
+        delete(before);
     }
 
     //duyet lan luot cac phan tu(head -> tail)
