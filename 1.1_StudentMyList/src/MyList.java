@@ -278,16 +278,16 @@ public class MyList {
         queue.traverse();
     }
 
-//    private Node before(Node x) {
-//        if (x == head) {
-//            return null;
-//        }
-//        Node before = head;
-//        while (before.next != x) {
-//            before = before.next;
-//        }
-//        return before;
-//    }
+    public Node before(Node x) {
+        if (x == head) {
+            return null;
+        }
+        Node f = head;
+        while (f.next != x) {
+            f = f.next;
+        }
+        return f;
+    }
     //O(1)
     public void addAfter(Node p, Student s) {
         if (p == null) {
@@ -322,13 +322,13 @@ public class MyList {
         if (isEmpty() || p == null || p == head) {
             return;
         }
-        Node before = head;
-        while (before.next != p) {
-            before = before.next;
+        Node f = head;
+        while (f.next != p) {
+            f = f.next;
         }
-        delete(before);
+        delete(f);
     }
-
+ 
     //duyet lan luot cac phan tu(head -> tail)
     public void traverse() {
         Node p = head;
@@ -410,8 +410,8 @@ public class MyList {
         if (i == 0) {
             deleteFirst();
         } else {
-            Node before = get(i - 1);
-            deleteAfter(before);
+            Node f = get(i - 1);
+            deleteAfter(f);
         }
     }
 
@@ -431,11 +431,11 @@ public class MyList {
 //        if (p == head) {
 //            deleteFirst();
 //        }
-//        Node before = head;
-//        while (before.next != p) {
-//            before = before.next;
+//        Node f = head;
+//        while (f.next != p) {
+//            f = f.next;
 //        }
-//        deleteAfter(before);
+//        deleteAfter(f);
 //    }
     //xoa 1 node x dau tien. 
     public void delete(Node x) {
