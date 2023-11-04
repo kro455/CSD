@@ -310,11 +310,11 @@ public class MyList {
             addFirst(s);
             return;
         }
-        Node before = head;
-        while (before.next != p) {
-            before = before.next;
+        Node f = head;
+        while (f.next != p) {
+            f = f.next;
         }
-        addAfter(before, s);
+        addAfter(f, s);
     }
 
     //O(n)
