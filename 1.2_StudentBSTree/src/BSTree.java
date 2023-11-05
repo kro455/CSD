@@ -1,3 +1,4 @@
+
 public class BSTree {
 
     Node root;
@@ -305,17 +306,15 @@ public class BSTree {
         Node p = root;
         while (p != null) {
             count++;
-            while (p != null) {
-                //  p.info.id == q.info.id
-                if (p.info.id.equals(q.info.id)) {
-                    return count;
-                }
-                //  p.info.id > q.info.id
-                if (p.info.id.compareTo(q.info.id) > 0) {
-                    p = p.left;
-                } else {
-                    p = p.right;
-                }
+            //  p.info.id == q.info.id
+            if (p.info.id.equals(q.info.id)) {
+                return count;
+            }
+            //  p.info.id > q.info.id
+            if (p.info.id.compareTo(q.info.id) > 0) {
+                p = p.left;
+            } else {
+                p = p.right;
             }
         }
         return -1;
@@ -562,7 +561,6 @@ public class BSTree {
         }
     }
 
-    
     //////////// ko dung 2 ham nay. ////////////////////
     public Node rotateRight2(Node p) {
         if (p == null || p.left == null) {
